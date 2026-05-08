@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="az">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AeroLux</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SkyBound</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
-
-    <h1>AeroLux-a xoş gəlmisiniz ✈️</h1>
-    <p>
-        Səyahətin ən rahat və sürətli yolu burada başlayır.<br>
-        Daha çox məlumat əldə etmək və bilet sifariş etmək üçün aşağıdakı düyməyə klikləyin.
-    </p>
-
-    <a href="#" class="btn">İndi başla</a>
-
-    <button>Sign up</button>
-    <button>Sign in</button>
-    <button>Indi basla</button>
+<body class="auth-body">
+<div class="auth-container">
+    <h2>Create Account</h2>
+    <form id="registerForm">
+        <input type="text" placeholder="name" required >
+        <input type = "text" placeholder="surname" required >
+        <input type="email" placeholder="email address" required>
+        <input type="password" placeholder="password" required>
+        <button type="submit" class="btn-submit">Sign Up</button>
+    </form>
+    <p class="auth-footer">Already have an account? <a href="login.html">Login here</a></p>
+    <p class="forgot-password"><a href = "ResetPassword.html">Forgot password?</a></p>
+</div>
 </body>
-
 </html>

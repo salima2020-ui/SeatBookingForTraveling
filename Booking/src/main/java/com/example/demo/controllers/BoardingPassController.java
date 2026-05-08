@@ -9,15 +9,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 @RequestMapping("/boardingPasses")
 @RequiredArgsConstructor
 public class BoardingPassController {
     private final BoardingPassService boardingPassService;
 
-    @PostMapping("/check-in/{id}")
-    public ResponseEntity<BoardingPass> checkIn(@PathVariable Long id) {
-        BoardingPass updatedPass = boardingPassService.checkIn(id);
-        return ResponseEntity.ok(updatedPass);
-    }
+//    @PostMapping("/check-in/{id}")
+//    public ResponseEntity<BoardingPass> checkIn(@PathVariable Long id) {
+//        BoardingPass updatedPass = boardingPassService.checkIn(id);
+//        return ResponseEntity.ok(updatedPass);
+//    }
 }

@@ -20,16 +20,16 @@ public class BoardingPassService {
     }
 
 
-    public BoardingPass checkIn(Long boardingPassId){
-        BoardingPass boardingPass = boardingPassRepository.findById(boardingPassId).orElseThrow(()->new BoardingPassNotFound("boarding pass not found!"));
-        if (Boolean.TRUE.equals(boardingPass.getIsCheckedIn())) {
-            return boardingPass;
-        }
-        boardingPass.setIsCheckedIn(true);
-        boardingPass.setCheckedInAt(LocalDateTime.now());
-        boardingPass.setGate(generateRandomGate());
-        return boardingPassRepository.save(boardingPass);
-    }
+//    public BoardingPass checkIn(Long boardingPassId){
+//        BoardingPass boardingPass = boardingPassRepository.findById(boardingPassId).orElseThrow(()->new BoardingPassNotFound("boarding pass not found!"));
+//        if (Boolean.TRUE.equals(boardingPass.getIsCheckedIn())) {
+//            return boardingPass;
+//        }
+//        boardingPass.setIsCheckedIn(true);
+//        boardingPass.setCheckedInAt(LocalDateTime.now());
+//        boardingPass.setGate(generateRandomGate());
+//        return boardingPassRepository.save(boardingPass);
+//    }
 
     public void sendMessage(){
 

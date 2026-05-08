@@ -23,21 +23,30 @@ public class Flight {
     private String flightNumber;
 
     @ManyToOne
+    @JoinColumn(name = "departure_airport_id")
     private Airport departureAirport;
 
     @ManyToOne
+    @JoinColumn(name = "arrival_airport_id")
     private Airport arrivalAirport;
 
     private LocalDateTime departureTime;
     private LocalDateTime arrivalTime;
 
-    private BigDecimal price;
+    private BigDecimal basePrice;
     private String gate;
 
     @ManyToOne
-    @JoinColumn(name = "flight_id", referencedColumnName = "id") // ✅ hansı təyyarə?
+    @JoinColumn(name = "flight_id", referencedColumnName = "id")
     private Plane plane;
+
+    @ManyToOne
+    @JoinColumn(name = "airline_id", referencedColumnName = "id")
+    private Airline airline;
 
     @Enumerated(EnumType.STRING)
     private FlightStatus status;
+
+    @OneToMany(mappedBy = "flight")
+    private List<BoardingPass> boardingPasses;
 }

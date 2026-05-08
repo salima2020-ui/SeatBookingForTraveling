@@ -19,8 +19,8 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    @OneToMany(mappedBy = "city") //Ey Hibernate, bu əlaqənin sahibi mən deyiləm, Airport entity-sindəki 'city' sahəsidir. Bazaya baxanda get Airport cədvəlinə bax.
-    private List<Airport> airports;  //mappedBy olan sahə bazada sütun yaratmır. Əgər hər iki tərəfə mappedBy qoysan, nə Country cədvəlində, nə də City cədvəlində bir-birini tanıyan bir ID sütunu olmayacaq. Sütun yoxdursa, əlaqə də yoxdur.
+    @OneToMany(mappedBy = "city")
+    private List<Airport> airports;
     @ManyToOne
     @JoinColumn(name = "country_id")
     private Country country;

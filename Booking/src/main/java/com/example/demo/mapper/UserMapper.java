@@ -3,14 +3,14 @@ package com.example.demo.mapper;
 import java.time.LocalDate;
 import java.time.Period;
 
-import com.example.demo.dto.UserRegisterDto;
+import com.example.demo.dtos.dto.UserRegisterDto;
 import com.example.demo.entities.User;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
-@Mapper(componentModel = "spring")
 
+@Mapper(componentModel = "spring")
 public interface UserMapper {
 
     @Mapping(source = "dto", target = "fullName" , qualifiedByName="mapFullName")

@@ -17,7 +17,8 @@ public class NotiEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long toUserId;
-    private String fromUser;
+    private Long fromUserId;
+    private String header;
     @Column(columnDefinition = "TEXT")
     private String text;
     private LocalDateTime createdAt = LocalDateTime.now();

@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 public class BoardingPassCompEvent {
     private Long id;
     private Long userId;
+    private Long fromUserId;
     private String qrCode;
     private LocalDateTime boardingTime;
 

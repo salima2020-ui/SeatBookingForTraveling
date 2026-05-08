@@ -1,4 +1,4 @@
-package com.example.demo.dto;
+package com.example.demo.dtos;
 
 import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
@@ -33,6 +33,6 @@ public class UserRegisterDto {
     @NotBlank
     @Pattern(regexp = "^\\+[1-9][0-9]{7,14}$",
             message = "Correct phone number format")
-    private String phone;
+    private String phoneNumber;
 
 }

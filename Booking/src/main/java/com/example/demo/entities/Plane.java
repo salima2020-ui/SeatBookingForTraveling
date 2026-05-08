@@ -23,4 +23,7 @@ public class Plane {
 
     @OneToMany(mappedBy = "plane", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<SeatTemplate> seats;
+
+    @OneToMany(mappedBy = "plane")
+    private List<Flight> flights;
 }

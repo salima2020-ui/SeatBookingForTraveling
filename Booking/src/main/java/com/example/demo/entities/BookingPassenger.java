@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 
 @Entity
+@Table(name = "booking_passengers")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,7 +29,7 @@ public class BookingPassenger {
     @JoinColumn(name = "seat_id")
     private Seat seat;
 
-    @OneToOne(mappedBy = "passenger")
+    @OneToOne(mappedBy = "bookingPassenger")
     private BoardingPass boardingPass;
 
     private BigDecimal price;

@@ -16,7 +16,8 @@ public class NotiListener {
     public void listenToBoardingPass(BoardingPassCompEvent event){
     NotiEntity noti = new NotiEntity();
     noti.setToUserId(event.getUserId());
-        noti.setFromUser("AIRLINE_SYSTEM");
+        noti.setFromUserId(event.getFromUserId());
+        noti.setHeader("Ready ticket warning..");
         noti.setText("Ticket ready! QR: " + event.getQrCode());
         notificationRepository.save(noti);
 

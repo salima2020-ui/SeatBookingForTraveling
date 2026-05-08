@@ -27,6 +27,5 @@ public class SeatTemplate {
 
     @Enumerated(EnumType.STRING)
     private SeatClass seatClass;
-
     private BigDecimal basePrice;
 }

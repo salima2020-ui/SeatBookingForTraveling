@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "airlines")
 @AllArgsConstructor
@@ -22,4 +24,7 @@ public class Airline {
     @ManyToOne
     @JoinColumn(name = "country_id")
     private Country country;
+
+   @OneToMany(mappedBy = "airline")
+    private List<Flight> flights;
 }

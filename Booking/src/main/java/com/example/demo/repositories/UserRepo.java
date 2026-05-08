@@ -10,9 +10,9 @@ import java.util.Optional;
 public interface UserRepo extends JpaRepository<User, Long> {
     boolean existsByUsername(String username);
     Optional<User> findByUsername(String name);
-    @Query("SELECT p.fullName, p.age FROM User p")
-    List<Object[]> findNameAndAge();
+//    @Query("SELECT p.fullName, p.age FROM User p")
+//    List<Object[]> findNameAndAge();
 
-
+    Optional<User> findByEmail(String email);
 
 }

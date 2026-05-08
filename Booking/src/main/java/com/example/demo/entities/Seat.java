@@ -28,4 +28,7 @@ public class Seat {
     @JoinColumn(name = "seat_template_id", referencedColumnName = "id")
     private SeatTemplate seatTemplate;
 
+    @OneToOne(mappedBy = "seat")
+    private BoardingPass boardingPass;
+
 }

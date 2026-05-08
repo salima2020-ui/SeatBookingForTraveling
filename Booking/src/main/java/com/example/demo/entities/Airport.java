@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Builder
 @Data
@@ -17,8 +19,13 @@ public class Airport {
     @GeneratedValue
     private Long id;
     private String name;
+    private double serviceFee;
     @ManyToOne
     @JoinColumn(name = "city_id", referencedColumnName = "id")
     private City city;
+
+    @OneToMany(mappedBy = "airport")
+    private List<Flight> flights;
+
 
 }

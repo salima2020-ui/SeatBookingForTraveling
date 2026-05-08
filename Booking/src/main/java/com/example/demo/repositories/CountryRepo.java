@@ -12,12 +12,12 @@ public interface CountryRepo extends JpaRepository<Country, Long> {
    @Query("SELECT c FROM Country c join fetch c.cities")
     List<Country> findAllWithCities1();
 
-   @EntityGraph(attributePaths = {"cities"})
-    List<Country> findAllWithCities2();
-
-    @Query("SELECT c.name, ct.name FROM Country c JOIN c.cities ct")
-    List<Object[]> findCountryAndCityNames3();
-
+//   @EntityGraph(attributePaths = {"cities"})
+//    List<Country> findAllWithCities2();
+//
+//    @Query("SELECT c.name, ct.name FROM Country c JOIN c.cities ct")
+//    List<Object[]> findCountryAndCityNames3();
+//
     @Query("SELECT c.name as countryName, ct.name as cityName FROM Country c JOIN c.cities ct")
     List<Object[]> findCountryAndCityNames4();
 }

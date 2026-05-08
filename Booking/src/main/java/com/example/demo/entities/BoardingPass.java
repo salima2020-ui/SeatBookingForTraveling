@@ -20,14 +20,26 @@ public class BoardingPass {
 
     @OneToOne
     @JoinColumn(name = "bookingPassenger_id", referencedColumnName = "id")
-    private BookingPassenger passenger;
-    //mappedBy olmayan tərəf əlaqənin sahibidir və bazada sütun (Foreign Key) onun cədvəlində yaranır.
-    // mappedBy olan tərəf isə sadəcə "əks tərəfə bax" deyən tərəfdir.
+    private BookingPassenger bookingPassenger;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
     private String qrCode;
 
     private String gate;
+
+    @OneToOne
+    @JoinColumn(name = "seat_id")
+    private Seat seat;
+
     private LocalDateTime boardingTime;
     private Boolean isCheckedIn = false;
     private LocalDateTime checkedInAt;
+
+    @ManyToOne
+    @JoinColumn(name = "flight_id", referencedColumnName = "id")
+    private Flight flight;
+
 }
